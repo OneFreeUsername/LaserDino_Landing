@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Game with Laser Attack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            image-rendering: pixelated;
+        }
+        
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: #f7f7f7;
+            color: #535353;
+            line-height: 1.6;
+            background-image: 
+                linear-gradient(45deg, #e0e0e0 25%, transparent 25%),
+                linear-gradient(-45deg, #e0e0e0 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #e0e0e0 75%),
+                linear-gradient(-45deg, transparent 75%, #e0e0e0 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border: 8px solid #535353;
+            box-shadow: 10px 10px 0 #333;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 4px solid #535353;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #ff6b35;
+            text-shadow: 3px 3px 0 #535353;
+            margin-bottom: 20px;
+        }
+        
+        .pixel-dino {
+            font-size: 4em;
+            margin: 20px 0;
+        }
+        
+        .game-preview {
+            text-align: center;
+            margin: 40px 0;
+            border: 4px solid #535353;
+            padding: 10px;
+            background: #fff;
+        }
+        
+        .game-preview img {
+            max-width: 800px;
+            width: 100%;
+            border: 2px solid #535353;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: #fff;
+            border: 4px solid #535353;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 5px 5px 0 #333;
+        }
+        
+        .feature-icon {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        
+        .controls {
+            background: #fff;
+            border: 4px solid #535353;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        
+        .control-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 2px dashed #535353;
+        }
+        
+        .key {
+            background: #535353;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 0;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8em;
+            border: 2px solid #333;
+        }
+        
+        .download-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 30px;
+            background: #fff;
+            border: 4px solid #535353;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 15px 30px;
+            border: 4px solid #535353;
+            text-decoration: none;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.9em;
+            margin: 10px;
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }
+        
+        .btn:hover {
+            background: #ff852b;
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 #333;
+        }
+        
+        .btn-secondary {
+            background: #535353;
+        }
+        
+        .btn-secondary:hover {
+            background: #666;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            border-top: 4px solid #535353;
+            font-size: 0.8em;
+        }
+        
+        /* Пиксельная анимация */
+        @keyframes pixel-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .pixel-dino {
+            animation: pixel-bounce 2s infinite;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="pixel-dino">🦖</div>
+            <h1>DINO GAME WITH LASER ATTACK</h1>
+            <p>УЛУЧШЕННАЯ ВЕРСИЯ КЛАССИЧЕСКОЙ ИГРЫ GOOGLE</p>
+        </header>
+
+        <section class="game-preview">
+            <img src="https://raw.githubusercontent.com/OneFreeUsername/dino-game/main/gameplay.gif" alt="Gameplay Preview">
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🔥</div>
+                <h3>ЛАЗЕРНАЯ АТАКА</h3>
+                <p>Уничтожайте врагов лазером</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💥</div>
+                <h3>ЭФФЕКТЫ ВЗРЫВОВ</h3>
+                <p>Визуальные эффекты при уничтожении</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>СЛОЖНОСТЬ</h3>
+                <p>Игра ускоряется со временем</p>
+            </div>
+        </section>
+
+        <section class="controls">
+            <h2 style="text-align: center; margin-bottom: 30px;">🎮 УПРАВЛЕНИЕ</h2>
+            <div class="control-item">
+                <span>ПРЫЖОК</span>
+                <span class="key">SPACE / ↑</span>
+            </div>
+            <div class="control-item">
+                <span>ПРИСЕСТЬ</span>
+                <span class="key">↓</span>
+            </div>
+            <div class="control-item">
+                <span>ЛАЗЕРНАЯ АТАКА</span>
+                <span class="key">Z</span>
+            </div>
+        </section>
+
+        <section class="download-section">
+            <h2 style="margin-bottom: 30px;">🚀 СКАЧАТЬ ИГРУ</h2>
+            <a href="https://github.com/OneFreeUsername/dino-game/releases/latest" class="btn">
+                📥 СКАЧАТЬ EXE (WINDOWS)
+            </a>
+            <br>
+            <a href="https://github.com/OneFreeUsername/dino-game" class="btn btn-secondary">
+                💻 ИСХОДНЫЙ КОД НА GITHUB
+            </a>
+        </section>
+
+        <footer>
+            <p>© 2024 DINO GAME WITH LASER ATTACK</p>
+            <p style="margin-top: 15px;">
+                <a href="https://github.com/OneFreeUsername/dino-game" style="color: #ff6b35; text-decoration: none;">GITHUB РЕПОЗИТОРИЙ</a> | 
+                <a href="https://github.com/OneFreeUsername" style="color: #ff6b35; text-decoration: none;">АВТОР: ONEFREEUSERNAME</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
