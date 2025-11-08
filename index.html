@@ -128,6 +128,44 @@
             background: #fff;
             border: 4px solid #535353;
         }
+
+        .recommendation-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: #fff;
+            border: 4px solid #535353;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .recommendation-section h2 {
+            color: white;
+            text-shadow: 3px 3px 0 #535353;
+            margin-bottom: 30px;
+        }
+
+        .recommendation-section .feature-card {
+            background: rgba(255,255,255,0.1);
+            border: 4px solid white;
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .recommendation-section .feature-card h3 {
+            color: white;
+        }
+
+        .recommendation-section .btn {
+            background: white;
+            color: #667eea;
+            border: 4px solid white;
+        }
+
+        .recommendation-section .btn:hover {
+            background: #f0f0f0;
+            color: #764ba2;
+        }
         
         .btn {
             display: inline-block;
@@ -174,6 +212,12 @@
         .pixel-dino {
             animation: pixel-bounce 2s infinite;
         }
+
+        .pixel-spaceship {
+            font-size: 4em;
+            margin: 20px 0;
+            animation: pixel-bounce 3s infinite;
+        }
         
         /* Адаптивность */
         @media (max-width: 768px) {
@@ -200,12 +244,12 @@
             <p>МОДЕРНИЗИРОВАННАЯ ВЕРСИЯ КЛАССИЧЕСКОЙ ИГРЫ GOOGLE</p>
         </header>
 
-<section class="game-preview">
-    <h2>🎮 ГЕЙМПЛЕЙ</h2>
-    <img src="./Gameplay.gif" alt="LaserDino Gameplay" 
-         style="max-width: 800px; width: 100%; border: 2px solid #535353; display: block; margin: 0 auto;">
-    <p style="text-align: center; margin-top: 15px;">Смотрите лазерную атаку в действии!</p>
-</section>
+        <section class="game-preview">
+            <h2>🎮 ГЕЙМПЛЕЙ</h2>
+            <img src="./Gameplay.gif" alt="LaserDino Gameplay" 
+                 style="max-width: 800px; width: 100%; border: 2px solid #535353; display: block; margin: 0 auto;">
+            <p style="text-align: center; margin-top: 15px;">Смотрите лазерную атаку в действии!</p>
+        </section>
 
         <section class="features">
             <div class="feature-card">
@@ -252,20 +296,47 @@
             </a>
         </section>
 
+        <!-- НОВЫЙ РАЗДЕЛ С РЕКОМЕНДАЦИЕЙ -->
+        <section class="recommendation-section">
+            <div class="pixel-spaceship">🚀</div>
+            <h2>🌟 РЕКОМЕНДУЕМ ПОПРОБОВАТЬ</h2>
+            <p>Еще одна крутая игра от моего друга!</p>
+            
+            <div class="features" style="margin: 30px 0;">
+                <div class="feature-card">
+                    <div class="feature-icon">👾</div>
+                    <h3>SPACE INVADERS</h3>
+                    <p>Классический космический шутер</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💫</div>
+                    <h3>WPF ПРИЛОЖЕНИЕ</h3>
+                    <p>Современная реализация на C#</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>РЕТРО СТИЛЬ</h3>
+                    <p>Ностальгия по аркадным автоматам</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <a href="https://pasha-kto003.github.io/" class="btn" target="_blank">
+                    🌐 ПЕРЕЙТИ НА ЛЕНДИНГ
+                </a>
+                <a href="https://github.com/Pasha-kto003/Space_Invaders_WPF" class="btn" target="_blank">
+                    💻 GITHUB РЕПОЗИТОРИЙ
+                </a>
+            </div>
+        </section>
+
         <footer>
             <p>© 2025 LaserDino</p>
             <p style="margin-top: 15px;">
-                <a href="https://github.com/OneFreeUsername/dino-game" style="color: #ff6b35; text-decoration: none;">GITHUB РЕПОЗИТОРИЙ</a> | 
+                <a href="https://github.com/OneFreeUsername/LaserDino" style="color: #ff6b35; text-decoration: none;">GITHUB РЕПОЗИТОРИЙ</a> | 
                 <a href="https://github.com/OneFreeUsername" style="color: #ff6b35; text-decoration: none;">АВТОР: ONEFREEUSERNAME</a>
             </p>
         </footer>
     </div>
 </body>
-
 </html>
-
-
-
-
-
-
