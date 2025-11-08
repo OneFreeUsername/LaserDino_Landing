@@ -56,6 +56,11 @@
             font-size: 4em;
             margin: 20px 0;
         }
+
+        .pixel-spaceship {
+            font-size: 4em;
+            margin: 20px 0;
+        }
         
         .game-preview {
             text-align: center;
@@ -135,36 +140,6 @@
             padding: 40px;
             background: #fff;
             border: 4px solid #535353;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .recommendation-section h2 {
-            color: white;
-            text-shadow: 3px 3px 0 #535353;
-            margin-bottom: 30px;
-        }
-
-        .recommendation-section .feature-card {
-            background: rgba(255,255,255,0.1);
-            border: 4px solid white;
-            color: white;
-            backdrop-filter: blur(10px);
-        }
-
-        .recommendation-section .feature-card h3 {
-            color: white;
-        }
-
-        .recommendation-section .btn {
-            background: white;
-            color: #667eea;
-            border: 4px solid white;
-        }
-
-        .recommendation-section .btn:hover {
-            background: #f0f0f0;
-            color: #764ba2;
         }
         
         .btn {
@@ -190,6 +165,14 @@
         .btn-secondary {
             background: #535353;
         }
+
+        .btn-blue {
+            background: #4a6bff;
+        }
+
+        .btn-blue:hover {
+            background: #5a7bff;
+        }
         
         .btn-secondary:hover {
             background: #666;
@@ -214,8 +197,6 @@
         }
 
         .pixel-spaceship {
-            font-size: 4em;
-            margin: 20px 0;
             animation: pixel-bounce 3s infinite;
         }
         
@@ -296,35 +277,35 @@
             </a>
         </section>
 
-        <!-- НОВЫЙ РАЗДЕЛ С РЕКОМЕНДАЦИЕЙ -->
+        <!-- РАЗДЕЛ С РЕКОМЕНДАЦИЕЙ В СТИЛЕ ОСНОВНОГО САЙТА -->
         <section class="recommendation-section">
             <div class="pixel-spaceship">🚀</div>
-            <h2>🌟 РЕКОМЕНДУЕМ ПОПРОБОВАТЬ</h2>
-            <p>Еще одна крутая игра от моего друга!</p>
+            <h2 style="color: #4a6bff; text-shadow: 3px 3px 0 #535353; margin-bottom: 30px;">🌟 ТАКЖЕ РЕКОМЕНДУЕМ</h2>
+            <p style="margin-bottom: 30px;">Попробуйте крутую игру моего друга - классический Space Invaders!</p>
             
-            <div class="features" style="margin: 30px 0;">
+            <div class="features">
                 <div class="feature-card">
                     <div class="feature-icon">👾</div>
                     <h3>SPACE INVADERS</h3>
-                    <p>Классический космический шутер</p>
+                    <p>Легендарный космический шутер</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💫</div>
-                    <h3>WPF ПРИЛОЖЕНИЕ</h3>
+                    <h3>WPF / C#</h3>
                     <p>Современная реализация на C#</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
                     <h3>РЕТРО СТИЛЬ</h3>
-                    <p>Ностальгия по аркадным автоматам</p>
+                    <p>Настоящая ностальгия по аркадам</p>
                 </div>
             </div>
 
-            <div style="margin-top: 30px;">
-                <a href="https://pasha-kto003.github.io/" class="btn" target="_blank">
+            <div style="margin-top: 40px;">
+                <a href="https://pasha-kto003.github.io/" class="btn btn-blue" target="_blank">
                     🌐 ПЕРЕЙТИ НА ЛЕНДИНГ
                 </a>
-                <a href="https://github.com/Pasha-kto003/Space_Invaders_WPF" class="btn" target="_blank">
+                <a href="https://github.com/Pasha-kto003/Space_Invaders_WPF" class="btn btn-secondary" target="_blank">
                     💻 GITHUB РЕПОЗИТОРИЙ
                 </a>
             </div>
