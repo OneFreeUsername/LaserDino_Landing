@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaserDino</title>
+
+    <!-- SEO -->
+    <title>LaserDino — инди-игра про динозавра с лазером | Официальный сайт</title>
+    <meta name="description" content="LaserDino — инди-игра про динозавра с лазером. Модернизированная версия классической игры Google Dino. Геймплей, скриншоты и загрузка игры.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="LaserDino — инди-игра про динозавра с лазером">
+    <meta property="og:description" content="LaserDino — аркадная инди-игра про динозавра с лазером. Официальный сайт проекта.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onefreeusername.github.io/LaserDino_Landing/">
+    <meta property="og:image" content="https://onefreeusername.github.io/LaserDino_Landing/Gameplay.gif">
+
+    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -12,56 +26,64 @@
             box-sizing: border-box;
             image-rendering: pixelated;
         }
-        
+
         body {
             font-family: 'Press Start 2P', cursive;
             background: #f7f7f7;
             color: #535353;
             line-height: 1.6;
-            background-image: 
+            background-image:
                 linear-gradient(45deg, #e0e0e0 25%, transparent 25%),
                 linear-gradient(-45deg, #e0e0e0 25%, transparent 25%),
                 linear-gradient(45deg, transparent 75%, #e0e0e0 75%),
                 linear-gradient(-45deg, transparent 75%, #e0e0e0 75%);
             background-size: 20px 20px;
-            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
         }
-        
+
         .container {
             max-width: 1000px;
-            margin: 0 auto;
+            margin: 20px auto;
             padding: 20px;
             background: white;
             border: 8px solid #535353;
             box-shadow: 10px 10px 0 #333;
-            margin-top: 20px;
-            margin-bottom: 20px;
         }
-        
+
         header {
             text-align: center;
             padding: 40px 0;
             border-bottom: 4px solid #535353;
             margin-bottom: 40px;
         }
-        
+
         h1 {
             font-size: 2.5em;
             color: #ff6b35;
             text-shadow: 3px 3px 0 #535353;
             margin-bottom: 20px;
         }
-        
-        .pixel-dino {
-            font-size: 4em;
-            margin: 20px 0;
+
+        h2 {
+            margin-bottom: 20px;
         }
 
+        .pixel-dino,
         .pixel-spaceship {
             font-size: 4em;
             margin: 20px 0;
+            animation: pixel-bounce 2.5s infinite;
         }
-        
+
+        @keyframes pixel-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .seo-text {
+            margin: 30px 0;
+            text-align: center;
+        }
+
         .game-preview {
             text-align: center;
             margin: 40px 0;
@@ -69,79 +91,52 @@
             padding: 10px;
             background: #fff;
         }
-        
+
         .game-preview img {
             max-width: 800px;
             width: 100%;
             border: 2px solid #535353;
         }
-        
+
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin: 40px 0;
         }
-        
+
         .feature-card {
-            background: #fff;
             border: 4px solid #535353;
             padding: 20px;
             text-align: center;
-            transition: transform 0.2s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 5px 5px 0 #333;
-        }
-        
-        .feature-icon {
-            font-size: 2em;
-            margin-bottom: 15px;
-        }
-        
-        .controls {
             background: #fff;
+        }
+
+        .controls,
+        .download-section,
+        .recommendation-section {
             border: 4px solid #535353;
             padding: 30px;
             margin: 40px 0;
+            background: #fff;
+            text-align: center;
         }
-        
+
         .control-item {
             display: flex;
             justify-content: space-between;
-            align-items: center;
             padding: 15px 0;
             border-bottom: 2px dashed #535353;
         }
-        
+
         .key {
             background: #535353;
             color: white;
             padding: 8px 16px;
-            border-radius: 0;
-            font-family: 'Press Start 2P', cursive;
-            font-size: 0.8em;
             border: 2px solid #333;
-        }
-        
-        .download-section {
-            text-align: center;
-            margin: 50px 0;
-            padding: 30px;
-            background: #fff;
-            border: 4px solid #535353;
+            font-size: 0.8em;
         }
 
-        .recommendation-section {
-            text-align: center;
-            margin: 50px 0;
-            padding: 40px;
-            background: #fff;
-            border: 4px solid #535353;
-        }
-        
         .btn {
             display: inline-block;
             background: #ff6b35;
@@ -149,175 +144,81 @@
             padding: 15px 30px;
             border: 4px solid #535353;
             text-decoration: none;
-            font-family: 'Press Start 2P', cursive;
-            font-size: 0.9em;
             margin: 10px;
-            transition: all 0.2s;
-            text-transform: uppercase;
-        }
-        
-        .btn:hover {
-            background: #ff852b;
-            transform: translate(-2px, -2px);
-            box-shadow: 4px 4px 0 #333;
-        }
-        
-        .btn-secondary {
-            background: #535353;
         }
 
-        .btn-blue {
-            background: #4a6bff;
-        }
+        .btn-secondary { background: #535353; }
+        .btn-blue { background: #4a6bff; }
 
-        .btn-blue:hover {
-            background: #5a7bff;
-        }
-        
-        .btn-secondary:hover {
-            background: #666;
-        }
-        
         footer {
             text-align: center;
-            margin-top: 60px;
-            padding: 30px;
+            margin-top: 40px;
+            padding-top: 30px;
             border-top: 4px solid #535353;
             font-size: 0.8em;
         }
-        
-        /* Пиксельная анимация */
-        @keyframes pixel-bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .pixel-dino {
-            animation: pixel-bounce 2s infinite;
-        }
 
-        .pixel-spaceship {
-            animation: pixel-bounce 3s infinite;
-        }
-        
-        /* Адаптивность */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8em;
-            }
-            
-            .container {
-                margin: 10px;
-                padding: 15px;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-            }
+            h1 { font-size: 1.8em; }
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <div class="pixel-dino">🦖</div>
-            <h1>LaserDino</h1>
-            <p>МОДЕРНИЗИРОВАННАЯ ВЕРСИЯ КЛАССИЧЕСКОЙ ИГРЫ GOOGLE</p>
-        </header>
+<div class="container">
 
-        <section class="game-preview">
-            <h2>🎮 ГЕЙМПЛЕЙ</h2>
-            <img src="./Gameplay.gif" alt="LaserDino Gameplay" 
-                 style="max-width: 800px; width: 100%; border: 2px solid #535353; display: block; margin: 0 auto;">
-            <p style="text-align: center; margin-top: 15px;">Смотрите лазерную атаку в действии!</p>
-        </section>
+    <header>
+        <div class="pixel-dino">🦖</div>
+        <h1>LaserDino</h1>
+        <p>Модернизированная версия классической игры Google Dino</p>
+    </header>
 
-        <section class="features">
-            <div class="feature-card">
-                <div class="feature-icon">🔥</div>
-                <h3>ЛАЗЕРНАЯ АТАКА</h3>
-                <p>Уничтожайте врагов лазером</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💥</div>
-                <h3>ЭФФЕКТЫ ВЗРЫВОВ</h3>
-                <p>Визуальные эффекты при уничтожении</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>СЛОЖНОСТЬ</h3>
-                <p>Игра ускоряется со временем</p>
-            </div>
-        </section>
+    <section class="seo-text">
+        <p>
+            <strong>LaserDino</strong> — это инди-игра в аркадном стиле,
+            где игрок управляет динозавром, использующим лазер для уничтожения врагов.
+            Проект вдохновлён классической игрой Google Dino и развивается как
+            независимая игра.
+        </p>
+    </section>
 
-        <section class="controls">
-            <h2 style="text-align: center; margin-bottom: 30px;">🎮 УПРАВЛЕНИЕ</h2>
-            <div class="control-item">
-                <span>ПРЫЖОК</span>
-                <span class="key">SPACE / ↑</span>
-            </div>
-            <div class="control-item">
-                <span>ПРИСЕСТЬ</span>
-                <span class="key">↓</span>
-            </div>
-            <div class="control-item">
-                <span>ЛАЗЕРНАЯ АТАКА</span>
-                <span class="key">Z</span>
-            </div>
-        </section>
+    <section class="game-preview">
+        <h2>🎮 ГЕЙМПЛЕЙ LASERDINO</h2>
+        <img src="./Gameplay.gif" alt="Геймплей игры LaserDino — динозавр стреляет лазером">
+        <p>Лазерная атака в действии</p>
+    </section>
 
-        <section class="download-section">
-            <h2 style="margin-bottom: 30px;">🚀 СКАЧАТЬ ИГРУ</h2>
-            <a href="https://github.com/OneFreeUsername/LaserDino/releases/download/v1.0/Release.zip" class="btn">
-                📥 СКАЧАТЬ EXE (WINDOWS)
-            </a>
-            <br>
-            <a href="https://github.com/OneFreeUsername/LaserDino" class="btn btn-secondary">
-                💻 ИСХОДНЫЙ КОД НА GITHUB
-            </a>
-        </section>
+    <section class="features">
+        <div class="feature-card">🔥 Лазерная атака</div>
+        <div class="feature-card">💥 Эффекты взрывов</div>
+        <div class="feature-card">⚡ Увеличение сложности</div>
+    </section>
 
-        <!-- РАЗДЕЛ С РЕКОМЕНДАЦИЕЙ В СТИЛЕ ОСНОВНОГО САЙТА -->
-        <section class="recommendation-section">
-            <div class="pixel-spaceship">🚀</div>
-            <h2 style="color: #4a6bff; text-shadow: 3px 3px 0 #535353; margin-bottom: 30px;">🌟 ТАКЖЕ РЕКОМЕНДУЕМ</h2>
-            <p style="margin-bottom: 30px;">Попробуйте крутую игру моего друга - классический Space Invaders!</p>
-            
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">👾</div>
-                    <h3>SPACE INVADERS</h3>
-                    <p>Легендарный космический шутер</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💫</div>
-                    <h3>WPF / C#</h3>
-                    <p>Современная реализация на C#</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>РЕТРО СТИЛЬ</h3>
-                    <p>Настоящая ностальгия по аркадам</p>
-                </div>
-            </div>
+    <section class="controls">
+        <h2>🎮 УПРАВЛЕНИЕ</h2>
+        <div class="control-item"><span>Прыжок</span><span class="key">SPACE / ↑</span></div>
+        <div class="control-item"><span>Присесть</span><span class="key">↓</span></div>
+        <div class="control-item"><span>Лазер</span><span class="key">Z</span></div>
+    </section>
 
-            <div style="margin-top: 40px;">
-                <a href="https://pasha-kto003.github.io/" class="btn btn-blue" target="_blank">
-                    🌐 ПЕРЕЙТИ НА ЛЕНДИНГ
-                </a>
-                <a href="https://github.com/Pasha-kto003/Space_Invaders_WPF" class="btn btn-secondary" target="_blank">
-                    💻 GITHUB РЕПОЗИТОРИЙ
-                </a>
-            </div>
-        </section>
+    <section class="download-section">
+        <h2>🚀 СКАЧАТЬ LASERDINO</h2>
+        <a href="https://github.com/OneFreeUsername/LaserDino/releases/download/v1.0/Release.zip" class="btn">
+            Скачать EXE (Windows)
+        </a>
+        <a href="https://github.com/OneFreeUsername/LaserDino" class="btn btn-secondary">
+            Исходный код на GitHub
+        </a>
+    </section>
 
-        <footer>
-            <p>© 2025 LaserDino</p>
-            <p style="margin-top: 15px;">
-                <a href="https://github.com/OneFreeUsername/LaserDino" style="color: #ff6b35; text-decoration: none;">GITHUB РЕПОЗИТОРИЙ</a> | 
-                <a href="https://github.com/OneFreeUsername" style="color: #ff6b35; text-decoration: none;">АВТОР: ONEFREEUSERNAME</a>
-            </p>
-        </footer>
-    </div>
+    <footer>
+        <p>© 2025 LaserDino</p>
+        <p>
+            <a href="https://github.com/OneFreeUsername/LaserDino">GitHub</a> |
+            <a href="https://github.com/OneFreeUsername">Автор</a>
+        </p>
+    </footer>
+
+</div>
 </body>
 </html>
